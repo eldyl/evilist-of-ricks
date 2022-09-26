@@ -33,7 +33,9 @@ export default function RickCard() {
           className='rounded-lg'
         />
         <h3 className=' text-xl text font-medium'>{rick.name}</h3>
-        <button className='p-3 bg-neutral-400 rounded-md'>PURE EVIL</button>
+        <button className='p-3 bg-neutral-400 rounded-md font-bold text-black'>
+          PURE EVIL
+        </button>
       </div>
     );
   });

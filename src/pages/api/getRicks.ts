@@ -10,11 +10,20 @@ export default async function getRicks(
   res: NextApiResponse<any>,
 ) {
   try {
+    let packagedDataToSend = [];
+
     let results = await axios.get(
-      'https://rickandmortyapi.com/api/character?name=rick',
+      'https://rickandmortyapi.com/api/character/?name=rick',
     );
 
-    res.status(200).send(results.data);
+    for (let i = 1; i < results.data.info.pages + 1; i++) {
+      let pageXResults = await axios.get(
+        `https://rickandmortyapi.com/api/character/?page=${[i]}&name=rick`,
+      );
+      packagedDataToSend.push(...pageXResults.data.results);
+    }
+
+    res.status(200).send(packagedDataToSend);
   } catch (error) {
     console.error(error);
   }

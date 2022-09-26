@@ -21,7 +21,7 @@ export default function RickCard() {
 
   return (
     <div className='mx-auto'>
-      <div className='flex flex-col bg-neutral-300 gap-3 text-center text-gray-600 rounded-lg shadow-lg p-6'>
+      <div className='flex flex-col bg-neutral-300 gap-3 text-center text-gray-600 rounded-lg shadow-md p-6'>
         <Image
           src={'https://rickandmortyapi.com/api/character/avatar/1.jpeg'}
           alt={'Rick'}

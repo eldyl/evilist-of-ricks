@@ -4,13 +4,13 @@ import type { AppType } from 'next/dist/shared/lib/utils';
 import { trpc } from '@/utils/trpc';
 import Header from '../components/Layout/Header';
 
-function MyApp({ Component, pageProps }: AppProps) {
+const MyApp: AppType = ({ Component, pageProps }) => {
   return (
     <>
       <Header />
       <Component {...pageProps} />
     </>
   );
-}
+};
 
 export default trpc.withTRPC(MyApp);

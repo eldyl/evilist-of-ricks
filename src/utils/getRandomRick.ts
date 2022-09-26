@@ -1,7 +1,7 @@
 const RICK_COUNT = 107;
 
-export const getRandomRick = (notThisOne?: number) => {
-  const rickIndex = Math.floor(Math.random() * (RICK_COUNT - 1));
+export const getRandomRick: (notThisOne?: number) => number = (notThisOne) => {
+  const rickIndex = Math.floor(Math.random() * RICK_COUNT);
 
   if (rickIndex !== notThisOne) return rickIndex;
   return getRandomRick(notThisOne);

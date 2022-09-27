@@ -19,7 +19,9 @@ export default function Header() {
           <div className='flex items-center'>
             <Link href='/' passHref>
               <a>
-                <h1>Evilist of Ricks</h1>
+                <h1 className='text-[#42b4ca] text-xl font-bold'>
+                  Evilist of Ricks
+                </h1>
               </a>
             </Link>
           </div>

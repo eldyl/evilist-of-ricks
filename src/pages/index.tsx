@@ -26,7 +26,6 @@ const Home: NextPage = () => {
         <h2 className='font-bold text-xl sm:text-5xl text-center sm:pb-6'>
           Who is the most evil Rick?
         </h2>
-        <LoadingRickCard />
         <div className='sm:flex mx-auto p-6 gap-6 text-center sm:min-h-[475px] font-bold sm:mb-0 mb-12'>
           {pageLoaded ? (
             <RickCard {...rickArray[firstIndex]} />

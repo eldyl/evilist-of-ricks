@@ -1,4 +1,3 @@
-import axios from 'axios';
 import Image from 'next/image';
 
 interface Rick {
@@ -8,7 +7,7 @@ interface Rick {
 }
 
 export default function RickCard(props: Rick) {
-  let { id, name, image } = props;
+  let { name, image } = props;
 
   return (
     <div className='mx-auto'>
@@ -22,7 +21,12 @@ export default function RickCard(props: Rick) {
           priority
         />
         <h3 className=' text-xl text font-medium'>{name}</h3>
-        <button className='p-3 bg-neutral-400 rounded-md font-bold text-black'>
+        <button
+          className='p-3 bg-neutral-400 rounded-md font-bold text-black'
+          onClick={() => {
+            location.reload();
+          }}
+        >
           PURE EVIL
         </button>
       </div>

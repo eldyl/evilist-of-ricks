@@ -28,7 +28,8 @@ export default function RickCard(props: any) {
 
           <h3 className='text-lg font-medium'>{name}</h3>
           <button
-            className='p-3 bg-neutral-400 rounded-md font-bold text-black'
+            type='button'
+            className='rounded-md border border-transparent bg-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-slate-300 border-neutral-400'
             onClick={() => {
               voteForMostEvil(id);
             }}

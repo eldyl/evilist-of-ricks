@@ -6,8 +6,12 @@ interface Rick {
   image: string;
 }
 
-export default function RickCard(props: Rick) {
-  let { name, image } = props;
+interface VoteFunction {
+  voteForMostEvil: (selected: number) => { return: any };
+}
+
+export default function RickCard(props: any) {
+  let { name, image, voteForMostEvil, id } = props;
 
   return (
     <>
@@ -26,7 +30,7 @@ export default function RickCard(props: Rick) {
           <button
             className='p-3 bg-neutral-400 rounded-md font-bold text-black'
             onClick={() => {
-              location.reload();
+              voteForMostEvil(id);
             }}
           >
             PURE EVIL

@@ -9,7 +9,7 @@ const Home: NextPage = () => {
   const [ids, setIds] = useState(getOptionsForVote());
   const [firstIndex, secondIndex] = ids;
   const [pageLoaded, setPageLoaded] = useState(false);
-  const rick = trpc.ricks.public.slowQueryCached.useQuery();
+  const rick = trpc.ricks.get.useQuery();
 
   useEffect(() => {
     setPageLoaded(true);

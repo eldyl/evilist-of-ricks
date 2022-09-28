@@ -5,22 +5,15 @@ import { getOptionsForVote } from '@/utils/getRandomRick';
 import RickCard from '@/components/RickCard';
 import LoadingRickCard from '@/components/RickCard/LoadingCard';
 
-interface Rick {
-  id: number;
-  name: string;
-  image: string;
-}
-
 const Home: NextPage = () => {
   const [ids, setIds] = useState(() => getOptionsForVote());
   const [firstIndex, secondIndex] = ids;
   const [pageLoaded, setPageLoaded] = useState(false);
   const rick = trpc.ricks.get.useQuery();
-  const voteMutation = trpc.vote.vote.useMutation();
+  const voteMutation = trpc.vote.submit.useMutation();
 
   useEffect(() => {
     setPageLoaded(true);
-    console.log('USE EFFECT FIRED');
   }, []);
 
   const rickArray = rick.data;
@@ -40,7 +33,6 @@ const Home: NextPage = () => {
         votedAgainstEvil: rickArray[firstIndex].id,
       });
     }
-    console.log(selected);
     setIds(getOptionsForVote());
   };
 

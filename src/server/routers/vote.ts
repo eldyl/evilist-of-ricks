@@ -3,7 +3,7 @@ import { z } from 'zod';
 import { prisma } from '@/server/utils/prisma';
 
 export const voteRouter = t.router({
-  vote: t.procedure
+  submit: t.procedure
     .input(
       z.object({
         votedForEvil: z.number(),
@@ -11,7 +11,6 @@ export const voteRouter = t.router({
       }),
     )
     .mutation(async ({ input }) => {
-      console.log(input);
       const voteInDb = await prisma.vote.create({
         data: {
           ...input,

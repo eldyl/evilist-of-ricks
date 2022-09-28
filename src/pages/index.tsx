@@ -10,22 +10,32 @@ const Home: NextPage = () => {
   const [firstIndex, secondIndex] = ids;
   const [pageLoaded, setPageLoaded] = useState(false);
   const rick = trpc.ricks.get.useQuery();
+  const voteMutation = trpc.vote.submit.useMutation();
 
   useEffect(() => {
     setPageLoaded(true);
-    // console.log('USE EFFECT FIRED');
   }, []);
-
-  const voteForMostEvil = (selected: number) => {
-    // todo: vote go to db
-    setIds(getOptionsForVote());
-    console.log(selected);
-  };
 
   const rickArray = rick.data;
   if (!rickArray) {
     return <div>Loading...</div>;
   }
+
+  const voteForMostEvil = (selected: number) => {
+    if (selected === rickArray[firstIndex].id) {
+      voteMutation.mutate({
+        votedForEvil: rickArray[firstIndex].id,
+        votedAgainstEvil: rickArray[secondIndex].id,
+      });
+    } else {
+      voteMutation.mutate({
+        votedForEvil: rickArray[secondIndex].id,
+        votedAgainstEvil: rickArray[firstIndex].id,
+      });
+    }
+    setIds(getOptionsForVote());
+  };
+
   return (
     <>
       <div className='flex flex-col p-6 w-screen'>

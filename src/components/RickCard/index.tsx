@@ -11,7 +11,8 @@ interface RickAndVote extends Rick {
 }
 
 export default function RickCard(props: RickAndVote) {
-  let { name, image, voteForMostEvil, id } = props;
+  let rick = props;
+  let { name, image, voteForMostEvil, id } = rick;
 
   return (
     <>
@@ -31,7 +32,7 @@ export default function RickCard(props: RickAndVote) {
             type='button'
             className='rounded-md border border-transparent bg-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-slate-300 border-neutral-400'
             onClick={() => {
-              voteForMostEvil(id);
+              voteForMostEvil(rick.id);
             }}
           >
             PURE EVIL

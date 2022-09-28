@@ -6,12 +6,13 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
+  provider          = "mysql"
+  url               = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_URL")
 }
 
 model Vote {
-  id        Int      @id
+  id        String   @id @default(cuid())
   createdAt DateTime @default(now())
 
   votedForEvil     Int

@@ -8,20 +8,18 @@ interface Rick {
 }
 
 export const rickRouter = t.router({
-  public: t.router({
-    slowQueryCached: t.procedure.query(async ({ ctx }) => {
-      let ricks: Rick[] = [];
+  get: t.procedure.query(async ({ ctx }) => {
+    let ricks: Rick[] = [];
 
-      for (let i = 1; i < 7; i++) {
-        let results = await axios.get(
-          `https://rickandmortyapi.com/api/character/?page=${[i]}&name=rick`,
-        );
-        ricks.push(...results.data.results);
-      }
-      return {
-        ricks,
-      };
-    }),
+    for (let i = 1; i < 7; i++) {
+      let results = await axios.get(
+        `https://rickandmortyapi.com/api/character/?page=${[i]}&name=rick`,
+      );
+      ricks.push(...results.data.results);
+    }
+    return {
+      ricks,
+    };
   }),
 });
 

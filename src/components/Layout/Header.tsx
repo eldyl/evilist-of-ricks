@@ -19,7 +19,7 @@ export default function Header() {
           <div className='flex items-center'>
             <Link href='/' passHref>
               <a>
-                <h1 className='text-[#42b4ca] text-xl font-bold'>
+                <h1 className='text-[#42b4ca] text-xl font-bold underline decoration-[#bfde42] underline-offset-4'>
                   Evilist of Ricks
                 </h1>
               </a>

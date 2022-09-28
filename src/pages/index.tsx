@@ -15,11 +15,16 @@ const Home: NextPage = () => {
     setPageLoaded(true);
   }, []);
 
+  const voteForMostEvil = (selected: number) => {
+    // todo:
+    setIds(getOptionsForVote());
+    console.log(selected);
+  };
+
   const rickArray = rick.data?.ricks;
   if (!rickArray) {
     return <div>Loading...</div>;
   }
-
   return (
     <>
       <div className='flex flex-col p-6 w-screen'>
@@ -28,13 +33,19 @@ const Home: NextPage = () => {
         </h2>
         <div className='sm:flex mx-auto p-6 gap-6 text-center sm:min-h-[475px] font-bold sm:mb-0 mb-12'>
           {pageLoaded ? (
-            <RickCard {...rickArray[firstIndex]} />
+            <RickCard
+              {...rickArray[firstIndex]}
+              voteForMostEvil={voteForMostEvil}
+            />
           ) : (
             <LoadingRickCard />
           )}
           <h3 className='sm:flex sm:items-center'>OR</h3>
           {pageLoaded ? (
-            <RickCard {...rickArray[secondIndex]} />
+            <RickCard
+              {...rickArray[secondIndex]}
+              voteForMostEvil={voteForMostEvil}
+            />
           ) : (
             <LoadingRickCard />
           )}

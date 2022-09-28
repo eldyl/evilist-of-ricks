@@ -17,12 +17,12 @@ const Home: NextPage = () => {
   }, []);
 
   const voteForMostEvil = (selected: number) => {
-    // todo:
+    // todo: vote go to db
     setIds(getOptionsForVote());
     console.log(selected);
   };
 
-  const rickArray = rick.data?.ricks;
+  const rickArray = rick.data;
   if (!rickArray) {
     return <div>Loading...</div>;
   }

@@ -17,9 +17,7 @@ export const rickRouter = t.router({
       );
       ricks.push(...results.data.results);
     }
-    return {
-      ricks,
-    };
+    return ricks;
   }),
 });
 

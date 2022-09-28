@@ -6,11 +6,11 @@ interface Rick {
   image: string;
 }
 
-interface VoteFunction {
+interface RickAndVote extends Rick {
   voteForMostEvil: (selected: number) => { return: any };
 }
 
-export default function RickCard(props: any) {
+export default function RickCard(props: RickAndVote) {
   let { name, image, voteForMostEvil, id } = props;
 
   return (

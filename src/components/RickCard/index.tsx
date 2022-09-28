@@ -7,7 +7,7 @@ interface Rick {
 }
 
 interface RickAndVote extends Rick {
-  voteForMostEvil: (selected: number) => { return: any };
+  voteForMostEvil(selected: number): any;
 }
 
 export default function RickCard(props: RickAndVote) {

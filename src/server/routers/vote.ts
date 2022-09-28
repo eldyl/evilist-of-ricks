@@ -6,12 +6,12 @@ export const voteRouter = t.router({
   vote: t.procedure
     .input(
       z.object({
-        id: z.number(),
         votedForEvil: z.number(),
         votedAgainstEvil: z.number(),
       }),
     )
-    .mutation(({ input }) => async () => {
+    .mutation(async ({ input }) => {
+      console.log(input);
       const voteInDb = await prisma.vote.create({
         data: {
           ...input,

@@ -11,7 +11,6 @@ const Home: NextPage = () => {
   const [pageLoaded, setPageLoaded] = useState(false);
   const rick = trpc.ricks.get.useQuery();
   const voteMutation = trpc.vote.submit.useMutation();
-  // const fillDB = trpc.fillDb.fill.useMutation();
 
   useEffect(() => {
     setPageLoaded(true);
@@ -22,15 +21,6 @@ const Home: NextPage = () => {
     return <div>Loading...</div>;
   }
 
-  // useEffect(() => {
-  //   for (let i = 0; i < rickArray.length; i++) {
-  //     fillDB.mutate({
-  //       id: rickArray[i].id,
-  //       name: rickArray[i].name,
-  //       image: rickArray[i].image,
-  //     });
-  //   }
-  // });
   const voteForMostEvil = (selected: number) => {
     if (selected === rickArray[firstIndex].id) {
       voteMutation.mutate({

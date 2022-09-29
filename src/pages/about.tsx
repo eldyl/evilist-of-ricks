@@ -6,7 +6,7 @@ const About: NextPage = () => {
   const voteForMostEvil = (selected: number) => {};
 
   return (
-    <div className='sm:pb-72'>
+    <div className='sm:pb-60'>
       <h2 className='font-bold text-xl sm:text-5xl text-center sm:pb-6'>
         About
       </h2>

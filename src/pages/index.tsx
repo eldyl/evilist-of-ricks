@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { getOptionsForVote } from '@/utils/getRandomRick';
 import RickCard from '@/components/RickCard';
 import LoadingRickCard from '@/components/RickCard/LoadingCard';
+import VoteLoadState from '@/components/VoteLoadState';
 
 const Home: NextPage = () => {
   const [ids, setIds] = useState(() => getOptionsForVote());
@@ -18,7 +19,7 @@ const Home: NextPage = () => {
 
   const rickArray = rick.data;
   if (!rickArray) {
-    return <div>Loading...</div>;
+    return <VoteLoadState />;
   }
 
   const voteForMostEvil = (selected: number) => {

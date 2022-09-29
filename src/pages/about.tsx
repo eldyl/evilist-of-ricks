@@ -6,7 +6,7 @@ const About: NextPage = () => {
   const voteForMostEvil = (selected: number) => {};
 
   return (
-    <div className='p-6 w-screen'>
+    <div className='sm:pb-72'>
       <h2 className='font-bold text-xl sm:text-5xl text-center sm:pb-6'>
         About
       </h2>
@@ -51,27 +51,22 @@ const About: NextPage = () => {
               </Link>
               .
             </li>
+            <li>
+              The Evilist of Ricks repository can be viewed
+              <Link
+                href={
+                  'https://github.com/GetUllrichorDieTrying/evilist-of-ricks/'
+                }
+                passHref
+              >
+                <a className='text-violet-600 font-bold text-lgs'>&nbsp;here</a>
+              </Link>
+              .
+            </li>
           </ul>
-          {/* <div className='flex gap-4'> */}
-          <div className='py-3 hover:scale-110 text-center'>
-            <Link
-              href='https://github.com/GetUllrichorDieTrying/evilist-of-ricks'
-              passHref
-            >
-              <a>
-                <Image
-                  src='/images/GitHub-Mark-120px-plus.png'
-                  alt='link to github'
-                  width={32}
-                  height={32}
-                />
-              </a>
-            </Link>
-          </div>
         </div>
       </div>
     </div>
-    // </div>
   );
 };
 

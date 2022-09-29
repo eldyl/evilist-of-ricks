@@ -13,7 +13,8 @@ export const voteRouter = t.router({
     .mutation(async ({ input }) => {
       const voteInDb = await prisma.vote.create({
         data: {
-          ...input,
+          votedForEvilId: input.votedForEvil,
+          votedAgainstEvilId: input.votedAgainstEvil,
         },
       });
       return { success: true, vote: voteInDb };

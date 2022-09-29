@@ -1,4 +1,5 @@
 import { t } from '../trpc';
+import { prisma } from '@/server/utils/prisma';
 import axios from 'axios';
 
 interface Rick {
@@ -17,13 +18,15 @@ export const rickRouter = t.router({
       );
       ricks.push(...results.data.results);
     }
-    return ricks.map((rick) => {
+    let rickArray = ricks.map((rick) => {
       return {
         id: rick.id,
         name: rick.name,
         image: rick.image,
       };
     });
+
+    return rickArray;
   }),
 });
 

@@ -12,10 +12,25 @@ datasource db {
   referentialIntegrity = "prisma"
 }
 
+model Rick {
+  id    Int    @id
+  name  String
+  image String
+
+  votedEvil    Vote[] @relation("votedEvil")
+  votedNotEvil Vote[] @relation("votedNotEvil")
+}
+
 model Vote {
   id        String   @id @default(cuid())
   createdAt DateTime @default(now())
 
-  votedForEvil     Int
-  votedAgainstEvil Int
+  votedForEvilId Int
+  votedForEvil   Rick @relation(name: "votedEvil", fields: [votedForEvilId], references: [id])
+
+  votedAgainstEvilId Int
+  votedAgainstEvil   Rick @relation(name: "votedNotEvil", fields: [votedAgainstEvilId], references: [id])
+
+  @@index([votedForEvilId])
+  @@index([votedAgainstEvilId])
 }

@@ -39,7 +39,7 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <div className='flex flex-col p-6 w-screen'>
+      <div className='flex flex-col pb-12 w-screen'>
         <h2 className='font-bold text-xl sm:text-5xl text-center sm:pb-6'>
           Who is the most evil Rick?
         </h2>

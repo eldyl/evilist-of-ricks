@@ -63,6 +63,10 @@ const About: NextPage = () => {
               </Link>
               .
             </li>
+            <li className=' font-extrabold'>
+              Most importantly, we are here to determine the Most Evil Rick of
+              them all... according to the Internet!
+            </li>
           </ul>
         </div>
       </div>

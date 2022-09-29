@@ -9,6 +9,7 @@ interface Navigation {
 export default function Header() {
   const navigation = [
     { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
     { name: 'Results', href: '/results' },
   ];
 

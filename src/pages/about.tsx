@@ -30,7 +30,7 @@ const About: NextPage = () => {
                 passHref
               >
                 <a className='text-violet-600 font-bold text-lgs'>
-                  &nbsp;Theo's tutorial video&nbsp;
+                  &nbsp; Theo`s tutorial video &nbsp;
                 </a>
               </Link>
               where he makes

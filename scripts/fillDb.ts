@@ -1,7 +1,5 @@
-import { prisma } from '@/server/utils/prisma';
+import { prisma } from '../src/server/utils/prisma';
 import axios from 'axios';
-
-// const axios = require('axios');
 
 interface Rick {
   id: number;
@@ -18,26 +16,20 @@ async function doBackFill() {
     );
     ricks.push(...results.data.results);
   }
-  let rickArray = ricks.map((rick) => {
+
+  let formattedRickData = ricks.map((rick) => {
     return {
       id: rick.id,
       name: rick.name,
       image: rick.image,
     };
   });
-  console.log(rickArray);
 
-  return rickArray;
-
-  // const fillDbWithRicks = await prisma.rick.createMany({
-  //   data: {
-  //     id: rickArray.id,
-  //     name: input.name,
-  //     image: input.image,
-  //   },
-  // });
-  // return { success: true, fillDb: fillDbWithRicks };
-  // console.log({ fillDbWithRicks });
+  const fillDbWithRicks = await prisma.rick.createMany({
+    data: formattedRickData,
+  });
+  console.log({ fillDbWithRicks });
+  return { success: true, fillDb: fillDbWithRicks };
 }
 
 doBackFill();

@@ -1,5 +1,4 @@
 import { t } from '../trpc';
-import { prisma } from '@/server/utils/prisma';
 import axios from 'axios';
 
 interface Rick {

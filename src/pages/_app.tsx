@@ -6,11 +6,15 @@ import Footer from '@/components/Layout/Footer';
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
-    <div className='flex flex-col h-screen justify-between'>
-      <Header />
-      <Component {...pageProps} />
-      <Footer />
-    </div>
+    <>
+      <div className='flex flex-col h-screen'>
+        <Header />
+        <div className='grow'>
+          <Component {...pageProps} />
+        </div>
+        <Footer />
+      </div>
+    </>
   );
 };
 

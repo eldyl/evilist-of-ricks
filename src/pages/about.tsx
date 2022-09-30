@@ -6,11 +6,11 @@ const About: NextPage = () => {
   const voteForMostEvil = (selected: number) => {};
 
   return (
-    <div className='sm:pb-60'>
-      <h2 className='font-bold text-xl sm:text-5xl text-center sm:pb-6'>
+    <div className='pb-6 px-3'>
+      <h2 className='font-bold text-xl sm:text-5xl text-center p-3 sm:p-6'>
         About
       </h2>
-      <div className='mx-auto py-6  bg-gray-300 rounded-lg max-w-xl'>
+      <div className='mx-auto py-6  from-gray-300 to-gray-400 bg-gradient-to-b rounded-lg max-w-xl'>
         <div className='px-6'>
           <h3 className='text-gray-700 font-medium text-2xl pb-3'>Hello!</h3>
           <ul className='list-disc pl-12 text-gray-700 font-medium'>

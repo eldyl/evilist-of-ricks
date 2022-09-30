@@ -17,7 +17,7 @@ export default function RickCard(props: RickAndVote) {
   return (
     <>
       {image && (
-        <div className='flex flex-col bg-gray-300 gap-3 text-center text-gray-700 rounded-lg shadow-md p-6 h-[70vw] w-[60vw]  sm:max-w-[298px] sm:max-h-[426px] justify-between'>
+        <div className='flex flex-col  from-gray-300 to-gray-400 bg-gradient-to-b gap-3 text-center text-gray-700 rounded-lg shadow-md p-6 h-[70vw] w-[60vw]  sm:max-w-[298px] sm:max-h-[426px] justify-between'>
           <Image
             src={image}
             alt={name}

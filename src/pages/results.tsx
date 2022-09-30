@@ -20,7 +20,7 @@ const Results: NextPage<ReceivedRickResults> = (props) => {
     return (
       <div
         key={rick.id}
-        className='flex px-6 py-3 sm:w-90 justify-between bg-gray-300 rounded-md gap-4'
+        className='flex px-6 py-3 sm:w-90 justify-between  from-gray-300 to-gray-400 bg-gradient-to-b rounded-md gap-4'
       >
         <Image
           className='rounded-md'
@@ -43,8 +43,8 @@ const Results: NextPage<ReceivedRickResults> = (props) => {
   });
 
   return (
-    <div className='flex flex-col p-6 w-screen'>
-      <h2 className='font-bold text-xl sm:text-5xl text-center sm:pb-6'>
+    <div className='flex flex-col w-screen pb-6 px-3'>
+      <h2 className='font-bold text-xl sm:text-5xl text-center p-3 sm:p-6'>
         Results
       </h2>
       <div className='flex flex-col mx-auto gap-4'>{renderedResults}</div>

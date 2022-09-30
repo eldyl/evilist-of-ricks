@@ -1,6 +1,6 @@
 import type { GetStaticProps, NextPage } from 'next';
 import { prisma } from '@/server/utils/prisma';
-import Image from 'next/image';
+import ResultCard from '@/components/ResultCard';
 
 interface ReceivedRickResults {
   rickResults: {
@@ -17,29 +17,7 @@ interface ReceivedRickResults {
 
 const Results: NextPage<ReceivedRickResults> = (props) => {
   const renderedResults = props?.rickResults?.map((rick) => {
-    return (
-      <div
-        key={rick.id}
-        className='flex px-6 py-3 sm:w-90 justify-between  from-gray-300 to-gray-400 bg-gradient-to-b rounded-md gap-4'
-      >
-        <Image
-          className='rounded-md'
-          src={rick.image}
-          width={150}
-          height={150}
-          alt={rick.name}
-        />
-        <div className='text-center self-center font-bold text-xl text-gray-700'>
-          {rick.name}
-        </div>
-
-        <div className='self-center p-6 text-center text-gray-700'>
-          VOTED EVIL
-          <div className='font-bold text-black'>{rick._count.votedEvil} </div>
-          Times
-        </div>
-      </div>
-    );
+    return <ResultCard key={rick.id} {...rick} />;
   });
 
   return (

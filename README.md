@@ -2,4 +2,15 @@
 
 We are here to determine who is the most evil Rick of them all.
 
-## WIP
+## Made With
+
+- TypeScript
+- Next.js
+- Tailwind CSS
+- Prisma
+- tRPC
+
+## Deployment
+
+- Vercel
+- PlanetScale

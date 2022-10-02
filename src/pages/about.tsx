@@ -1,6 +1,5 @@
 import type { NextPage } from 'next';
 import Link from 'next/link';
-import Image from 'next/image';
 
 const About: NextPage = () => {
   const voteForMostEvil = (selected: number) => {};
@@ -54,9 +53,7 @@ const About: NextPage = () => {
             <li>
               The Evilist of Ricks repository can be viewed
               <Link
-                href={
-                  'https://github.com/GetUllrichorDieTrying/evilist-of-ricks/'
-                }
+                href={'https://github.com/dylanullrich/evilist-of-ricks/'}
                 passHref
               >
                 <a className='text-violet-600 font-bold text-lgs'>&nbsp;here</a>

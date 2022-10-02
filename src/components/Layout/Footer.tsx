@@ -6,11 +6,11 @@ export default function Footer() {
     <footer className='bg-slate-800'>
       <div className='p-2'>
         <p className='text-center text-base text-gray-400'>
-          &copy; 2022 Get Ullrich or Die Trying
+          &copy; 2022 Dylan Ullrich
         </p>
       </div>
       <div className='pb-2 text-center'>
-        <Link href='https://github.com/GetUllrichorDieTrying/' passHref>
+        <Link href='https://github.com/dylanullrich/' passHref>
           <a>
             <Image
               src='/images/GitHub-Mark-120px-plus.png'

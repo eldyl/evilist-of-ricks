@@ -7,9 +7,9 @@ const About: NextPage = () => {
       <h2 className='font-bold text-xl sm:text-5xl text-center p-3 sm:p-6'>
         About
       </h2>
-      <div className='mx-auto py-6  from-gray-300 to-gray-400 bg-gradient-to-b rounded-lg max-w-xl'>
+      <div className='mx-auto py-6  from-gray-400 to-gray-500 bg-gradient-to-b rounded-lg max-w-xl'>
         <div className='px-6'>
-          <ul className='list-disc pl-12 text-gray-700 font-medium'>
+          <ul className='list-disc pl-12 text-gray-800 font-medium'>
             <li className='font-extrabold'>
               We are here to determine the Most Evil Rick of them all.
             </li>

@@ -2,7 +2,7 @@ import type { GetStaticProps, NextPage } from 'next';
 import { prisma } from '@/server/utils/prisma';
 import ResultCard from '@/components/ResultCard';
 
-interface ReceivedRickResults {
+interface RickResultsProps {
   rickResults: {
     id: number;
     name: string;
@@ -12,11 +12,16 @@ interface ReceivedRickResults {
       votedEvil: number;
       votedNotEvil: number;
     };
+
+    percentForEvil: number;
+    totalVoteCount: number;
+    rank: number;
   }[];
 }
 
-const Results: NextPage<ReceivedRickResults> = (props) => {
-  const renderedResults = props?.rickResults?.map((rick) => {
+const Results: NextPage<RickResultsProps> = (props) => {
+  const results = props.rickResults;
+  const renderedResults = results?.map((rick) => {
     return <ResultCard key={rick.id} {...rick} />;
   });
 
@@ -33,7 +38,7 @@ const Results: NextPage<ReceivedRickResults> = (props) => {
 export default Results;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const rickResultsOrdered = await prisma.rick.findMany({
+  const ricksFromPrisma = await prisma.rick.findMany({
     orderBy: {
       votedEvil: { _count: 'desc' },
     },
@@ -49,5 +54,44 @@ export const getStaticProps: GetStaticProps = async () => {
       },
     },
   });
-  return { props: { rickResults: rickResultsOrdered }, revalidate: 60 };
+
+  const calculatedResults = ricksFromPrisma.map((rick) => {
+    const { votedEvil, votedNotEvil } = rick._count;
+
+    return {
+      id: rick.id,
+      name: rick.name,
+      image: rick.image,
+      _count: {
+        votedEvil: votedEvil,
+        votedNotEvil: votedNotEvil,
+      },
+      totalVoteCount: votedEvil + votedNotEvil,
+      percentForEvil: (votedEvil / (votedEvil + votedNotEvil)) * 100 || 0,
+    };
+  });
+
+  const sortedResults = calculatedResults.sort(
+    (a, b) => b.percentForEvil - a.percentForEvil,
+  );
+
+  const indexedResults = sortedResults.map((rick, index) => {
+    return {
+      id: rick.id,
+      name: rick.name,
+      image: rick.image,
+      _count: {
+        votedEvil: rick._count.votedEvil,
+        votedNotEvil: rick._count.votedNotEvil,
+      },
+      totalVoteCount: rick._count.votedEvil + rick._count.votedNotEvil,
+      percentForEvil:
+        (rick._count.votedEvil /
+          (rick._count.votedEvil + rick._count.votedNotEvil)) *
+          100 || 0,
+      rank: index + 1,
+    };
+  });
+
+  return { props: { rickResults: indexedResults }, revalidate: 60 };
 };

@@ -17,7 +17,7 @@ export default function RickCard(props: RickAndVote) {
   return (
     <>
       {image && (
-        <div className='flex flex-col  from-gray-300 to-gray-400 bg-gradient-to-b gap-3 text-center text-gray-700 rounded-lg shadow-md p-6 h-[70vw] w-[60vw]  sm:max-w-[298px] sm:max-h-[426px] justify-between'>
+        <div className='flex flex-col  from-gray-400 to-gray-500 bg-gradient-to-b gap-3 text-center text-gray-800 rounded-lg shadow-md p-6 h-[70vw] w-[60vw]  sm:max-w-[298px] sm:max-h-[426px] justify-between'>
           <Image
             src={image}
             alt={name}
@@ -27,7 +27,7 @@ export default function RickCard(props: RickAndVote) {
             priority
           />
 
-          <h3 className='text-lg font-medium'>{name}</h3>
+          <h3 className='text-md sm:text-xl font-bold'>{name}</h3>
           <button
             type='button'
             className='rounded-md border border-transparent bg-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-slate-300 border-neutral-400'

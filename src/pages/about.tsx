@@ -11,38 +11,25 @@ const About: NextPage = () => {
       </h2>
       <div className='mx-auto py-6  from-gray-300 to-gray-400 bg-gradient-to-b rounded-lg max-w-xl'>
         <div className='px-6'>
-          <h3 className='text-gray-700 font-medium text-2xl pb-3'>Hello!</h3>
           <ul className='list-disc pl-12 text-gray-700 font-medium'>
-            <li>
-              This was a quick project to get more practice with the
-              <Link href={'https://github.com/t3-oss/create-t3-app'} passHref>
-                <a className='text-violet-600 font-bold text-lgs'>
-                  &nbsp;t3&nbsp;
-                </a>
-              </Link>
-              stack.
+            <li className='font-extrabold'>
+              We are here to determine the Most Evil Rick of them all...
+              according to the Internet!
             </li>
             <li>
-              I followed parts of
+              Rick is a character from the TV Show
               <Link
-                href={'https://www.youtube.com/watch?v=PKy2lYEnhgs'}
+                href={'https://www.adultswim.com/videos/rick-and-morty'}
                 passHref
               >
                 <a className='text-violet-600 font-bold text-lgs'>
-                  &nbsp; Theo`s tutorial video &nbsp;
+                  &nbsp;Rick and Morty&nbsp;
                 </a>
               </Link>
-              where he makes
-              <Link href={'https://roundest.t3.gg/'} passHref>
-                <a className='text-violet-600 font-bold text-lgs'>
-                  &nbsp;roundest-mon
-                </a>
-              </Link>
-              .
+              who has many clones.
             </li>
             <li>
-              I was trying to find a decent topic to abstract the tutorial, when
-              I happily stumbled upon the
+              Data sourced from the
               <Link href={'https://rickandmortyapi.com/'} passHref>
                 <a className='text-violet-600 font-bold text-lgs'>
                   &nbsp;Rick and Morty API
@@ -51,7 +38,7 @@ const About: NextPage = () => {
               .
             </li>
             <li>
-              The Evilist of Ricks repository can be viewed
+              View the repository
               <Link
                 href={'https://github.com/dylanullrich/evilist-of-ricks/'}
                 passHref
@@ -60,9 +47,14 @@ const About: NextPage = () => {
               </Link>
               .
             </li>
-            <li className=' font-extrabold'>
-              Most importantly, we are here to determine the Most Evil Rick of
-              them all... according to the Internet!
+            <li>
+              Inspired by Theo's
+              <Link href={'https://roundest.t3.gg/'} passHref>
+                <a className='text-violet-600 font-bold text-lgs'>
+                  &nbsp;roundest-mon
+                </a>
+              </Link>
+              .
             </li>
           </ul>
         </div>

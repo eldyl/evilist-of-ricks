@@ -2,8 +2,6 @@ import type { NextPage } from 'next';
 import Link from 'next/link';
 
 const About: NextPage = () => {
-  const voteForMostEvil = (selected: number) => {};
-
   return (
     <div className='pb-6 px-3'>
       <h2 className='font-bold text-xl sm:text-5xl text-center p-3 sm:p-6'>

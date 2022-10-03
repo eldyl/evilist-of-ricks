@@ -1,26 +1,8 @@
-import type { GetStaticProps, NextPage } from 'next';
-import { prisma } from '@/server/utils/prisma';
+import type { NextPage } from 'next';
 import { trpc } from '@/utils/trpc';
 import ResultCard from '@/components/ResultCard';
 
-interface RickResultsProps {
-  rickResults: {
-    id: number;
-    name: string;
-    image: string;
-
-    _count: {
-      votedEvil: number;
-      votedNotEvil: number;
-    };
-
-    percentForEvil: number;
-    totalVoteCount: number;
-    rank: number;
-  }[];
-}
-
-const Results: NextPage<RickResultsProps> = () => {
+const Results: NextPage = () => {
   const receivedRicks = trpc.ricks.results.useQuery();
   const results = receivedRicks.data;
   const renderedResults = results?.map((rick) => {

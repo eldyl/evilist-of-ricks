@@ -23,3 +23,7 @@ There are many different versions of Rick on the show Rick and Morty. We are her
 4. When the database is established, copy the database url in a `.env` file. There is a sample in this repository that can be viewed [here](./.env.sample).
 5. Once a database is connected, you can seed the database by running `npm run seed` which will run the `fillDb.ts` script.
 6. Run `npm run dev` and visit `http://localhost:3000` to view the app.
+
+### Inspired by
+
+- [TheoBr's roundest-mon](https://github.com/TheoBr/roundest-mon)

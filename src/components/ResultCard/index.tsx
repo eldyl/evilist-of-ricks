@@ -20,8 +20,8 @@ export default function ResultCard(props: RickResults) {
   const { name, image, percentForEvil, rank } = rick;
 
   return (
-    <div className='flex sm:pr-6 pr-2 pb-3 sm:w-90 justify-between  from-gray-300 to-gray-400 bg-gradient-to-b rounded-md gap-4 items-center relative min-h-[150px]'>
-      <div className='font-bold border-4 py-1 px-2 sm:py-3 sm:px-6 rounded-md absolute left-0 top-0 border-[#42b4ca] bg-[#bfde42] text-[#42b4ca]'>
+    <div className='flex sm:pr-6 pr-2 pb-3 sm:w-90 justify-between  from-gray-300 to-gray-400 bg-gradient-to-b rounded-md gap-4 items-center relative min-h-[150px] border-gray-200 border-4'>
+      <div className='font-bold border-b-4 border-r-4 py-1 px-2 sm:py-3 sm:px-6 rounded-md absolute left-0 top-0 border-gray-300 bg-inherit text-gray-700'>
         {rank}
       </div>
       <div className='pl-16 sm:pl-24 pt-4'>

@@ -48,7 +48,7 @@ const About: NextPage = () => {
               .
             </li>
             <li>
-              Inspired by Theo's
+              Inspired by Theo&#39;s
               <Link href={'https://roundest.t3.gg/'} passHref>
                 <a className='text-violet-600 font-bold text-lgs'>
                   &nbsp;roundest-mon

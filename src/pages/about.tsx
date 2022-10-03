@@ -13,8 +13,7 @@ const About: NextPage = () => {
         <div className='px-6'>
           <ul className='list-disc pl-12 text-gray-700 font-medium'>
             <li className='font-extrabold'>
-              We are here to determine the Most Evil Rick of them all...
-              according to the Internet!
+              We are here to determine the Most Evil Rick of them all.
             </li>
             <li>
               Rick is a character from the TV Show
@@ -23,10 +22,10 @@ const About: NextPage = () => {
                 passHref
               >
                 <a className='text-violet-600 font-bold text-lgs'>
-                  &nbsp;Rick and Morty&nbsp;
+                  &nbsp;Rick and Morty
                 </a>
               </Link>
-              who has many clones.
+              .
             </li>
             <li>
               Data sourced from the
@@ -36,6 +35,21 @@ const About: NextPage = () => {
                 </a>
               </Link>
               .
+            </li>
+            <li>
+              Results are sorted by number of votes, and percentage of
+              &rdquo;evil&rdquo; votes.
+            </li>
+            <li>
+              You will see the highest percentages first, if the percentages are
+              equal, the Rick with more votes will rank higher.
+            </li>
+            <li>
+              All results are received from Internet visitors, and do not
+              reflect the opinion of the author of the app.
+            </li>
+            <li>
+              Data will become more accurate as more results are collected.
             </li>
             <li>
               View the repository

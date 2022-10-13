@@ -7,9 +7,13 @@ interface Rick {
   name: string;
   image: string;
 }
+const waitFor = async (ms: number) => {
+  new Promise((resolve) => setTimeout(resolve, ms));
+};
 
 export const rickRouter = t.router({
   get: t.procedure.query(async ({ ctx }) => {
+    await waitFor(5000);
     let ricks: Rick[] = [];
 
     for (let i = 1; i < 7; i++) {

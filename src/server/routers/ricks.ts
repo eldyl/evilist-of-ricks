@@ -29,6 +29,7 @@ export const rickRouter = t.router({
         image: rick.image,
       };
     });
+
     return rickArray;
   }),
 
@@ -87,7 +88,7 @@ export const rickRouter = t.router({
         rank: index + 1,
       };
     });
-    // console.log(indexedResults);
+
     return indexedResults;
   }),
 });

@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const { withPlausibleProxy } = require('next-plausible');
+
+module.exports = withPlausibleProxy()({
   reactStrictMode: true,
   swcMinify: true,
   images: {
     domains: ['rickandmortyapi.com'],
   },
-};
-
-module.exports = nextConfig;
+});

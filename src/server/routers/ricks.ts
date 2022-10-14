@@ -34,6 +34,7 @@ export const rickRouter = t.router({
   }),
 
   results: t.procedure.query(async ({ ctx }) => {
+    await waitFor(5000);
     const ricksFromPrisma = await prisma.rick.findMany({
       orderBy: {
         votedEvil: { _count: 'desc' },

@@ -5,6 +5,7 @@ import { getOptionsForVote } from '@/utils/getRandomRick';
 import RickCard from '@/components/RickCard';
 import LoadingRickCard from '@/components/RickCard/LoadingCard';
 import VoteLoadState from '@/components/VoteLoadState';
+import Head from 'next/head';
 
 const Home: NextPage = () => {
   const [ids, setIds] = useState(() => getOptionsForVote());
